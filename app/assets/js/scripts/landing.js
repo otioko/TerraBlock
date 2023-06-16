@@ -2,6 +2,15 @@
  * Script for landing.ejs
  */
 // Requirements
+var btn = document.getElementById('newsButtonText');
+
+// Ajoutez un écouteur d'événements click sur l'élément
+btn.addEventListener('click', function() {
+    // Attendez 1,5 seconde, puis ouvrez la page souhaitée
+    setTimeout(function() {
+        window.location.href = 'https://www.youtube.com/';
+    }, 1500);
+});
 const cp                      = require('child_process')
 const crypto                  = require('crypto')
 const { URL }                 = require('url')
@@ -250,7 +259,7 @@ const refreshServerStatus = async (fade = false) => {
 
         const servStat = await getServerStatus(47, serv.hostname, serv.port)
         console.log(servStat)
-        pLabel = 'PLAYERS'
+        pLabel = 'JOUEURS'
         pVal = servStat.players.online + '/' + servStat.players.max
 
     } catch (err) {
@@ -740,6 +749,33 @@ let newsLoadingListener = null
  */
 function setNewsLoading(val){
     if(val){
+       // Créez les éléments carrés
+var square1 = document.createElement('div');
+var square2 = document.createElement('div');
+var square3 = document.createElement('div');
+
+// Définissez les styles pour chaque carré
+square1.style.width = '100px';
+square1.style.height = '100px';
+square1.style.border = '1px solid black';
+square1.style.display = 'flex';
+square1.style.justifyContent = 'center';
+square1.style.alignItems = 'center';
+
+// Cloner les styles pour square2 et square3
+square2.style = square1.style.cssText;
+square3.style = square1.style.cssText;
+
+// Ajoutez du texte à chaque carré
+square1.textContent = 'Texte 1';
+square2.textContent = 'Texte 2';
+square3.textContent = 'Texte 3';
+
+// Ajoutez les carrés au corps du document
+document.body.appendChild(square1);
+document.body.appendChild(square2);
+document.body.appendChild(square3);
+
         const nLStr = 'Checking for News'
         let dotStr = '..'
         nELoadSpan.innerHTML = nLStr + dotStr
@@ -758,6 +794,7 @@ function setNewsLoading(val){
         }
     }
 }
+
 
 // Bind retry button.
 newsErrorRetry.onclick = () => {
