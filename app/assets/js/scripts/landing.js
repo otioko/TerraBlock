@@ -767,7 +767,7 @@ square2.style = square1.style.cssText;
 square3.style = square1.style.cssText;
 
 // Ajoutez du texte à chaque carré
-square1.textContent = 'Texte 1';
+square1.textContent = 'Texte 412';
 square2.textContent = 'Texte 2';
 square3.textContent = 'Texte 3';
 
